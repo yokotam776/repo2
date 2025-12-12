@@ -1,5 +1,6 @@
 from fastapi.testclient import TestClient
 from datetime import datetime
+import time
 from main import app
 
 client = TestClient(app)
@@ -48,8 +49,6 @@ def test_datetime_format():
 
 def test_multiple_requests():
     """複数回リクエストして異なる時刻が返されることを確認"""
-    import time
-    
     response1 = client.get("/datetime")
     time.sleep(0.1)  # 少し待つ
     response2 = client.get("/datetime")
