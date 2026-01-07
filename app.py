@@ -14,4 +14,6 @@ def main():
         )
         # 以下略
     except Exception as e:
+        # NOTE: Placeholder exception handler - implementation details omitted
+        # In production, consider logging the error for debugging
         pass

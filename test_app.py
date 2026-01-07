@@ -18,7 +18,7 @@ def test_main_uses_environment_variables():
         with patch('psycopg2.connect') as mock_connect:
             mock_connect.return_value = MagicMock()
             
-            # app.pyのmain関数をインポートして実行
+            # Import inside test to ensure environment variables are set before module loads
             from app import main
             main()
             
@@ -51,6 +51,7 @@ def test_main_uses_default_values():
         with patch('psycopg2.connect') as mock_connect:
             mock_connect.return_value = MagicMock()
             
+            # Import inside test to ensure environment variables are set before module loads
             from app import main
             main()
             
@@ -78,6 +79,7 @@ def test_main_with_custom_port():
         with patch('psycopg2.connect') as mock_connect:
             mock_connect.return_value = MagicMock()
             
+            # Import inside test to ensure environment variables are set before module loads
             from app import main
             main()
             
