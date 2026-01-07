@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 from datetime import datetime
 import time
-from main import app
+from src.main import app
 
 client = TestClient(app)
 
