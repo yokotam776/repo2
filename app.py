@@ -1,11 +1,17 @@
+import os
+import psycopg2
+
+
 def main():
     try:
         # Connect to PostgreSQL database
         connection = psycopg2.connect(
-            host="localhost",
-            database="your_database",
-            user="your_username",
-            password="your_password",
-            port="5432"
+            host=os.getenv("DB_HOST", "localhost"),
+            database=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            port=os.getenv("DB_PORT", "5432")
         )
-		# 以下略
+        # 以下略
+    except Exception as e:
+        pass
